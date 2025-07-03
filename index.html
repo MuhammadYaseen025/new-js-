@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background: #007BFF;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #quote {
+      font-size: 18px;
+      font-style: italic;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📜 Random Quote</h1>
+    <div id="quote-box">
+      <p id="quote">Click below to get a quote!</p>
+    </div>
+    <button onclick="generateQuote()">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "The best way to get started is to quit talking and begin doing. – Walt Disney",
+      "Don't let yesterday take up too much of today. – Will Rogers",
+      "It’s not whether you get knocked down, it’s whether you get up. – Vince Lombardi",
+      "If you are working on something exciting, it will keep you motivated. – Steve Jobs",
+      "Success is not in what you have, but who you are. – Bo Bennett",
+      "Believe you can and you're halfway there. – Theodore Roosevelt"
+    ];
+
+    function generateQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").innerText = quotes[randomIndex];
+    }
+  </script>
+</body>
+</html>
